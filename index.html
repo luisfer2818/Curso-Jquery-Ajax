@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Ajax_jQuery</title>
+    <link rel="stylesheet" href="css/examples.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="css/bootstrap-datepicker.css" rel="stylesheet" />
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/bootstrap-datepicker.pt-BR.min.js" charset="UTF-8"></script>
+</head>
+
+<body>
+
+    <header>
+
+        <a href="index.html" onmouseover="stopRotate()" id="test" style="transform: rotateY(0deg);">
+            <img src="css/fernando.png" /></a>
+
+    </header>
+
+    <main>
+        <section class="container">
+            <br>
+            <h2 align="center" class="title">Formulário em Ajax & Jquery</h2>
+            <span id="msg"></span>
+            <form id="AjaxRequest">
+                <div class="form-group">
+                    <label>Nome*</label>
+                    <input type="text" class="form-control" name="name" placeholder="Nome" maxlength="50">
+                </div>
+                <div class="form-group">
+                    <label>E-mail*</label>
+                    <input type="email" class="form-control" name="email" placeholder="E-mail">
+                </div>
+                <div class="form-group">
+                    <label>Telefone*</label>
+                    <input type="text" class="form-control" name="tel" placeholder="Telefone" maxlength="9">
+                </div>
+
+                <div class="form-group">
+                    <label>CPF*</label>
+                    <input type="text" class="form-control" name="cpf" placeholder="CPF" maxlength="12">
+                </div>
+
+                <div class="form-group">
+                    <label>Data*</label>
+                    <div class="input-group date">
+                        <input type="text" class="form-control" name="date" id="exemplo" placeholder="Data">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+                    <br>
+
+
+
+                    <a href="#" class="btn btn-danger text-default"> <span class="glyphicon glyphicon-trash" aria-hidden="true"> </span>
+                    </a>
+
+
+                    <br>
+                    <br>
+                    <!-- <button class="g-recaptcha" data-sitekey="6LeRrD4UAAAAAKfI2dWsMNY0gvLHv5PW2gf-w7D9" data-callback="YourOnSubmitFn"></button> -->
+                    <div class="form-group">
+                        <img src="captcha.php" alt="Código captcha"><br><br>
+
+                        <label>Digite o código*: </label>
+                        <input type="text" class="form-control" name="captcha" placeholder="Captcha"><br>
+                    </div>
+                    <button type="submit" class="btn btn-blue btn-effect btn-round btn-shadow btn-width" onclick="botao();">Enviar</button>
+                    <br><br>
+                    <a href="imprimir.php" class="btn btn-blue btn-effect  btn-shadow  btn-group" align="right" target="_blank">Imprimir PDF</a>
+                    <a href="imprimir_excel.php" class="btn btn-blue btn-effect  btn-shadow  btn-group" align="right" target="_blank">Imprimir Excel </a>
+            </form>
+            <br><br>
+            <div class="row">
+                <table id="contatos" class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+
+    <script type="text/javascript">
+        if (botao === "") {
+            alert("Vazio");
+        } else {
+            function botao() {
+                swal({
+                    title: "Sucesso!",
+                    text: "Cadastrado com Sucesso!",
+                    icon: "success",
+                });
+            }
+        }
+
+        $('#exemplo').datepicker({
+            format: "dd/mm/yyyy",
+            language: "pt-BR",
+            startDate: '+0d',
+        });
+        $('form').validate();
+    </script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="jquery.validation/localization/messages_pt_BR.min.js"></script>
+    <script src="jquery.validation/jquery.validate.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/anim.js"></script>
+</body>
+
+</html>
